@@ -12,7 +12,7 @@ public class DenunciaBean {
     private DenunciaService denunciaService;
 
     public String chamar() {
-        return "teste.jsf";
+        return "/pages/teste";
     }
 
 }
