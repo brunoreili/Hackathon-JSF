@@ -1,31 +1,43 @@
 package com.stefanini.bean;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.stefanini.model.Agente;
 import com.stefanini.service.AgenteService;
 
 @Named( "agenteMB")
-@ManagedBean
 @SessionScoped
-public class AgenteBean {
+public class AgenteBean implements Serializable {
 
-    @Inject
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Inject
     private AgenteService agenteService;
-    
-    private String nome;
-    
-    public String getNome() {
-		return nome;
+	
+	@Inject
+	private Agente agente;
+   
+	public Agente getAgente() {
+		if(agente == null){
+			agente = new Agente();
+		}
+		return agente;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setAgente(Agente agente) {
+		this.agente = agente;
 	}
-
+	
+	
 	public String chamar() {
-        return "/pages/teste";
+		agenteService.incluir(agente);
+		this.agente = new Agente();
+        return "index";
     }
-
 }

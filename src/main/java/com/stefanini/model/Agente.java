@@ -1,6 +1,7 @@
 package com.stefanini.model;
 // Generated 07/11/2016 12:17:14 by Hibernate Tools 4.3.1.Final
 
+import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,14 +20,17 @@ import javax.persistence.TemporalType;
 public class Agente implements java.io.Serializable {
 
 	private Integer idAgente;
+	private Integer matricula;
 	private String nome;
 	private Date dtContratacao;
 	private Integer tempoServico;
+	
 
 	public Agente() {
 	}
 
-	public Agente(String nome, Date dtContratacao, Integer tempoServico) {
+	public Agente(Integer matricula, String nome, Date dtContratacao, Integer tempoServico) {
+		this.setMatricula(matricula);
 		this.nome = nome;
 		this.dtContratacao = dtContratacao;
 		this.tempoServico = tempoServico;
@@ -42,6 +46,15 @@ public class Agente implements java.io.Serializable {
 
 	public void setIdAgente(Integer idAgente) {
 		this.idAgente = idAgente;
+	}
+	
+	@Column(name = "matricula", unique = true, nullable = false) 
+	public Integer getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(Integer matricula) {
+		this.matricula = matricula;
 	}
 
 	@Column(name = "nome", length = 100)

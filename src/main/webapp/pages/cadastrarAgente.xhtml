@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+    <h:form>
+    		<h:outputText for="matricula" value="Matrícula: "/>
+    	 	<p:inputText id="matricula" value="#{agenteMB.agente.matricula}"></p:inputText><br/>
+    
+    		<h:outputText for="nome" value="Nome: "/>
+    	 	<p:inputText id="nome" value="#{agenteMB.agente.nome}"></p:inputText><br/>
+    	 	  	 	
+    	 	<p:outputLabel for="popup" value="Data de Contratação: " />
+       		<p:calendar id="popup" value="#{agenteMB.agente.dtContratacao}" /><br/>	
+    	 	
+    	 	
+    	 	         
+         	<p:commandButton value="Chamar Bean" action="#{agenteMB.chamar()}"></p:commandButton><br/>
+    </h:form>
+</h:body>
+</html>

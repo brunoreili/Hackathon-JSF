@@ -7,10 +7,23 @@
 <h:head>
 </h:head>
 <h:body>
-    <h:form>
-    	 	<p:inputText value="#{agenteMB.nome}">Nome:</p:inputText><br/>
-    	 	         
-         	<p:commandButton value="Chamar Bean" action="#{agenteMB.chamar()}"></p:commandButton>
+   	<h:form>
+		<!-- Menu pagina inicial -->
+		<p:growl autoUpdate="true"/>
+	 
+	    <p:panelMenu style="width:300px">
+	        <p:submenu label="Detran" >
+	            <p:submenu label="Agente">
+	                <p:menuitem value="Cadastrar" outcome="/pages/cadastrarAgente" icon="ui-icon-cadastrar" />
+	                <p:menuitem value="Pesquisar" outcome="/pages/pesquisarAgente" icon="ui-icon-pesquisar" />
+	            </p:submenu>
+	            <p:submenu label="Veículos">
+	                <p:menuitem value="Cadastrar" outcome="/pages/cadastrarVeiculo" icon="ui-icon-cadastrar" />
+	                <p:menuitem value="Pesquisar" outcome="/pages/pesquisarVeiculo" icon="ui-icon-pesquisar" />
+	            </p:submenu>
+				
+	        </p:submenu>
+	    </p:panelMenu>
     </h:form>
 </h:body>
 </html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+    <h:form>	 	
+     		
+    	
+         <p:commandButton value="Cadastrar Veículo" action="#{veiculoMB.chamar()}"></p:commandButton><br/><br/>
+         	
+         <p:panel id="panel" header="Categoria">
+        	<p:messages id="msgs" />
+ 
+	        <h:panelGrid columns="3" cellpadding="5">
+	            <p:outputLabel for="descricao" value="Descrição:" />
+	            <p:inputTextarea rows="6" cols="33" id="descricao" value="#{categoriaMB.categoria.descricaiCategoria}" required="true" label="Descrição"/>
+	            <p:message for="descricao" display="icon" />	 
+	            <!-- tipoInfracaoMB.tipoInfracao.descricaoTipoInfracao -->
+	        </h:panelGrid>
+ 
+        	<p:commandButton value="Salvar" update="panel" actionListener="#{categoriaMB.chamar()}" icon="ui-icon-check" />
+    	</p:panel>
+    </h:form>
+</h:body>
+</html>
