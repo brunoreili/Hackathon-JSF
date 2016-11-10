@@ -7,23 +7,19 @@
 <h:head>
 </h:head>
 <h:body>
-    <h:form>	 	
-     		
-    	
-         <p:commandButton value="Cadastrar Veículo" action="#{veiculoMB.chamar()}"></p:commandButton><br/><br/>
-         	
-         <p:panel id="panel" header="Categoria">
-        	<p:messages id="msgs" />
- 
-	        <h:panelGrid columns="3" cellpadding="5">
-	            <p:outputLabel for="descricao" value="Descrição:" />
-	            <p:inputTextarea rows="6" cols="33" id="descricao" value="#{categoriaMB.categoria.descricaiCategoria}" required="true" label="Descrição"/>
-	            <p:message for="descricao" display="icon" />	 
-	            <!-- tipoInfracaoMB.tipoInfracao.descricaoTipoInfracao -->
-	        </h:panelGrid>
- 
-        	<p:commandButton value="Salvar" update="panel" actionListener="#{categoriaMB.chamar()}" icon="ui-icon-check" />
-    	</p:panel>
+    <h:form>
+   		<p:growl id="msgs" showDetail="true" />
+		
+		<!-- VEÍCULO -->
+        <p:panel header="Veiculo" id="panel">	
+        	<p:messages id="msgCategoria" />
+	        	<h:panelGrid columns="3" cellpadding="5">
+	            	<p:outputLabel for="ufVeiculo" value="UF" />
+	            	<p:inputTextarea rows="6" cols="33" id="ufVeiculo" value="#{veiculosMB.veiculos.uf}" required="true" label="Descrição"/>
+	            	<p:message for="ufVeiculo" display="icon" />
+	        		<p:commandButton value="Salvar UF" update="panel" actionListener="#{veiculosMB.chamar()}" icon="ui-icon-check" />
+	        	</h:panelGrid> 
+        </p:panel>
     </h:form>
 </h:body>
 </html>

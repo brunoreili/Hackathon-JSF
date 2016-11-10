@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "categoria", catalog = "hackaton")
 public class Categoria implements java.io.Serializable {
-
+	
 	private Integer idCategoria;
 	private String descricaiCategoria;
 

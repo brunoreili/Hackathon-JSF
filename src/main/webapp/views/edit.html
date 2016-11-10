@@ -1,0 +1,15 @@
+<div class="row">
+	<h2>Editar de Lembrete</h2>
+</div>
+<div class="row">
+<form class="form-horizontal" ng-submit="atualizar(item)">
+	<div class="form-group">
+		<input type="text" ng-model="item.titulo" class="form-control" placeholder="Título">
+		<input type="hidden" ng-model="item.id">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-success">Atualizar</button>
+		<a href="#/" class="btn btn-warning">Cancelar</a>
+	</div>							
+</form>
+</div>

@@ -1,6 +1,7 @@
 package com.stefanini.bean;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -8,6 +9,9 @@ import javax.inject.Named;
 
 import com.stefanini.model.Categoria;
 import com.stefanini.service.CategoriaService;
+
+
+
 
 @Named( "categoriaMB")
 @SessionScoped
@@ -37,8 +41,11 @@ public class CategoriaBean implements Serializable {
 	
 	public String chamar() {
 		categoriaService.incluir(categoria);
-		
 		this.categoria = new Categoria();
         return "index";
     }
+	
+	public Collection<Categoria> listar(){
+		return this.categoriaService.listar();
+	}
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+    <h:form>
+     	<p:growl id="msgs" showDetail="true" />
+ 		
+ 		<!-- CATEGORIA -->
+        <p:panel header="Categoria" id="panel">	
+        	<p:messages id="msgCategoria" />
+	        	<h:panelGrid columns="3" cellpadding="5">
+	            	<p:outputLabel for="descricaoCategoria" value="Descrição da Categoria:" />
+	            	<p:inputTextarea rows="6" cols="33" id="descricaoCategoria" value="#{categoriaMB.categoria.descricaiCategoria}" required="true" label="Descrição"/>
+	            	<p:message for="descricaoCategoria" display="icon" />
+	        		<p:commandButton value="Salvar Categoria" update="panel" actionListener="#{categoriaMB.chamar()}" icon="ui-icon-check" />
+	        	</h:panelGrid> 
+        </p:panel>
+        
+  	</h:form>
+</h:body>
+</html>

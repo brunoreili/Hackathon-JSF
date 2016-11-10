@@ -1,0 +1,33 @@
+<div class="col-md-12">
+<div class="row">
+	<h2 class="text-center"><u>Tipo de Denuncias</u></h2>
+</div>
+<div class="row">
+<a href="#/create" class="btn btn-primary">Cadastrar</a>
+</div>
+<br/>
+<div class="row">
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Descricao</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in tipo">
+		<td>{{item.id}}</td>
+		<td>{{item.descricao}}</td>
+		<td><a href="#/edit/{{item.id}}" class="btn btn-info btn-block">Editar</a></td>
+		<td><button ng-click="deletar(item.id)" class="btn btn-danger btn-block">Deletar</button></td>
+		</tr>
+		<tr ng-show="notFound" class="text-center">
+			<td colspan="4">Não tem registros</td>
+		</tr>
+	</tbody>
+</table>
+	
+</div>
+</div>

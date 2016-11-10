@@ -4,8 +4,12 @@ package com.stefanini.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -15,44 +19,41 @@ import javax.persistence.Table;
 @Table(name = "modelo", catalog = "hackaton")
 public class Modelo implements java.io.Serializable {
 
-	private Integer idModelo;
-	private int idCategoria;
-	private String descricaoModelo;
-
-	public Modelo() {
-	}
-
-	public Modelo(int idCategoria) {
-		this.idCategoria = idCategoria;
-	}
-
-	public Modelo(int idCategoria, String descricaoModelo) {
-		this.idCategoria = idCategoria;
-		this.descricaoModelo = descricaoModelo;
-	}
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-
+	@GeneratedValue(strategy = IDENTITY)	
 	@Column(name = "idModelo", unique = true, nullable = false)
-	public Integer getIdModelo() {
-		return this.idModelo;
-	}
-
+	
+	//Atributos
+	private Integer idModelo;
+	
+	@ManyToOne
+	@JoinColumn(name = "idCategoria")
+	private Categoria idCategoria;
+	
+	private String descricaoModelo;
+	
+	// Getters e Setters		
 	public void setIdModelo(Integer idModelo) {
 		this.idModelo = idModelo;
 	}
 
-	@Column(name = "idCategoria", nullable = false)
-	public int getIdCategoria() {
-		return this.idCategoria;
+	public Integer getIdModelo() {
+		return idModelo;
 	}
 
-	public void setIdCategoria(int idCategoria) {
+	public Categoria getIdCategoria() {
+		return idCategoria;
+	}
+
+	public void setIdCategoria(Categoria idCategoria) {
 		this.idCategoria = idCategoria;
 	}
 
-	@Column(name = "descricaoModelo", length = 50)
 	public String getDescricaoModelo() {
 		return this.descricaoModelo;
 	}

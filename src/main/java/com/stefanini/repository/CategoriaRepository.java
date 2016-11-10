@@ -1,9 +1,11 @@
 package com.stefanini.repository;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import com.stefanini.model.Categoria;
 
@@ -27,5 +29,11 @@ public class CategoriaRepository {
 	public List<Categoria> lista() {
 		return this.manager.createQuery("select c from categoria c", Categoria.class)
 				.getResultList();
+	}
+	
+	public Collection<Categoria> listar() {
+		// TODO Auto-generated method stub
+		Query q = manager.createQuery("SELECT p FROM Categoria p");
+		return (Collection<Categoria>) q.getResultList();
 	}
 }

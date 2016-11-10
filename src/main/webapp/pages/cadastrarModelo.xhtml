@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+    <h:form>
+     	<p:growl id="msgs" showDetail="true" />
+ 		
+        <!-- MODELO -->
+    	<p:panel id="panel" header="Modelo">
+    		<p:messages id="msgModelo" />
+    			<h:panelGrid columns="3" cellpadding="5">
+	        		<p:outputLabel for="descricaoModelo" value="Descrição do modelo:" />
+	           	 	<p:inputTextarea rows="6" cols="33" id="descricaoModelo" value="#{modeloMB.modelo.descricaoModelo}" required="true" label="Descrição"/>
+	          	 	<p:message for="descricaoModelo" display="icon" />
+	           		<p:commandButton value="Salvar Modelo" update="panel" actionListener="#{modeloMB.chamar()}" icon="ui-icon-check" />
+	   			</h:panelGrid>
+	   			
+	   			<label>Categoria: </label>
+            	<p:selectOneMenu id="categoria" style="width:150px" value="#{categoriaMB.}"> <!-- value="#{infracoesMB.idTipoInfracao}"--> 	 
+                	<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+                	<f:selectItems value="#{categoriaMB.listar()}" var="tipo" itemValue="#{tipo.idCategoria}" itemLabel="#{tipo.descricaiCategoria}"/>
+            	</p:selectOneMenu>
+        </p:panel>
+        
+  	</h:form>
+</h:body>
+</html>

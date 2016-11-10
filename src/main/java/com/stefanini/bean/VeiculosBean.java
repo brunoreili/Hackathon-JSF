@@ -37,7 +37,6 @@ public class VeiculosBean implements Serializable {
 	
 	public String chamar() {
 		veiculosService.incluir(veiculos);
-		
 		this.veiculos = new Veiculos();
         return "index";
     }
