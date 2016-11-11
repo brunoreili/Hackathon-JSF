@@ -18,42 +18,47 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "modelo", catalog = "hackaton")
 public class Modelo implements java.io.Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = IDENTITY)	
-	@Column(name = "idModelo", unique = true, nullable = false)
 	
-	//Atributos
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "idModelo", unique = true, nullable = false)
 	private Integer idModelo;
 	
-	@ManyToOne
-	@JoinColumn(name = "idCategoria")
-	private Categoria idCategoria;
-	
+	@Column(name = "descricaoModelo", length = 50)
 	private String descricaoModelo;
 	
-	// Getters e Setters		
+	@ManyToOne()
+	@JoinColumn(name = "idCategoria")
+	private Categoria categoria = new Categoria();
+
+	public Modelo() {
+	}
+
+	public Modelo(Integer idModelo, String descricaoModelo, Categoria categoria) {
+		//super();
+		this.idModelo = idModelo;
+		this.descricaoModelo = descricaoModelo;
+		this.categoria = categoria;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	
+	public Integer getIdModelo() {
+		return this.idModelo;
+	}
+
 	public void setIdModelo(Integer idModelo) {
 		this.idModelo = idModelo;
 	}
 
-	public Integer getIdModelo() {
-		return idModelo;
-	}
-
-	public Categoria getIdCategoria() {
-		return idCategoria;
-	}
-
-	public void setIdCategoria(Categoria idCategoria) {
-		this.idCategoria = idCategoria;
-	}
-
+	
 	public String getDescricaoModelo() {
 		return this.descricaoModelo;
 	}

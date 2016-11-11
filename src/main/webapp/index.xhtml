@@ -13,13 +13,24 @@
 	 
 	    <p:panelMenu style="width:300px">
 	        <p:submenu label="Detran" >
+	        
 	            <p:submenu label="Agente">
-	                <p:menuitem value="Cadastrar" outcome="/pages/cadastrarAgente" icon="ui-icon-cadastrar" />
+	                <p:menuitem value="Cadastrar" outcome="/pages/agente/cadastrarAgente" icon="ui-icon-cadastrar" />
 	            </p:submenu>
+	            
 	            <p:submenu label="Veículos">
-	                <p:menuitem value="Cadastrar Categoria" outcome="/pages/cadastrarCategoria" icon="ui-icon-cadastrar" />
-	                <p:menuitem value="Cadastrar Modelo" outcome="/pages/cadastrarModelo" icon="ui-icon-cadastrar" />
-	                <p:menuitem value="Cadastrar Veiculo" outcome="/pages/cadastrarVeiculo" icon="ui-icon-cadastrar" />
+	            	<p:submenu label="Categoria">
+	                	<p:menuitem value="Cadastrar" outcome="/pages/categoria/cadastrarCategoria" icon="ui-icon-cadastrar" />
+	                	<p:menuitem value="Listar" outcome="/pages/categoria/listarCategoria" icon="ui-icon-cadastrar" />
+	                	<p:menuitem value="Alterar" outcome="/pages/categoria/alterarCategoria" icon="ui-icon-cadastrar" />
+	                	<p:menuitem value="Deletar" outcome="/pages/categoria/deletarCategoria" icon="ui-icon-cadastrar" />
+	            	</p:submenu>
+	            	<p:submenu label="Modelo">
+	            		<p:menuitem value="Cadastrar" outcome="/pages/modelo/cadastrarModelo" icon="ui-icon-cadastrar" />
+	            	</p:submenu>
+	            	<p:submenu label="Veículo">
+	                	<p:menuitem value="Cadastrar" outcome="/pages/veiculo/cadastrarVeiculo" icon="ui-icon-cadastrar" />
+	                </p:submenu>
 	            </p:submenu>
 	        </p:submenu>
 	    </p:panelMenu>

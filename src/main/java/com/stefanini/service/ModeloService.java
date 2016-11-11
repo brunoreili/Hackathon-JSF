@@ -21,11 +21,14 @@ public class ModeloService {
     	modeloRepository.incluir(modelo);
     }
     
-    //
-    public void buscar(Modelo modelo){
-    	modeloRepository.incluir(modelo);
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public Collection<Modelo> listar(){
+    	return modeloRepository.listar();
     }
-    //
+    
+    /*public void buscar(Modelo modelo){
+    	modeloRepository.incluir(modelo);
+    }*/
     
 
     /*public Collection<Modelo> listar(){

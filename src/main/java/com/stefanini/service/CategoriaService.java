@@ -26,5 +26,16 @@ public class CategoriaService {
     public Collection<Categoria> listar(){
     	return categoriaRepository.listar();
     }
+    
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void alterar(Categoria categoria){
+    	categoriaRepository.altera(categoria);
+    	
+    }
+      
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void remover(Integer id){
+    	categoriaRepository.remove(id);
+    }
 
 }

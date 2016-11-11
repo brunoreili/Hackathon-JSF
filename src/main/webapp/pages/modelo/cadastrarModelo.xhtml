@@ -17,14 +17,17 @@
 	        		<p:outputLabel for="descricaoModelo" value="Descrição do modelo:" />
 	           	 	<p:inputTextarea rows="6" cols="33" id="descricaoModelo" value="#{modeloMB.modelo.descricaoModelo}" required="true" label="Descrição"/>
 	          	 	<p:message for="descricaoModelo" display="icon" />
-	           		<p:commandButton value="Salvar Modelo" update="panel" actionListener="#{modeloMB.chamar()}" icon="ui-icon-check" />
+	          	 	
+	          	 	<label>Categoria: </label>
+            		<p:selectOneMenu id="categoria" style="width:150px" value="#{modeloMB.idCategoria}"> <!-- value="#{infracoesMB.idTipoInfracao}"--> 	 
+                		<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+                		<f:selectItems value="#{categoriaMB.listar()}" var="tipo" itemValue="#{tipo.idCategoria}" itemLabel="#{tipo.descricaiCategoria}"/>
+            		</p:selectOneMenu><br/>
+            	
+	           		<p:commandButton value="Salvar Modelo" update="panel" actionListener="#{modeloMB.cadastrarInfracoes()}" icon="ui-icon-check" />
 	   			</h:panelGrid>
 	   			
-	   			<label>Categoria: </label>
-            	<p:selectOneMenu id="categoria" style="width:150px" value="#{categoriaMB.}"> <!-- value="#{infracoesMB.idTipoInfracao}"--> 	 
-                	<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
-                	<f:selectItems value="#{categoriaMB.listar()}" var="tipo" itemValue="#{tipo.idCategoria}" itemLabel="#{tipo.descricaiCategoria}"/>
-            	</p:selectOneMenu>
+	   			
         </p:panel>
         
   	</h:form>

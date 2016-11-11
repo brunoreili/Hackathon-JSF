@@ -31,9 +31,9 @@ public class ModeloRepository {
 				.getResultList();
 	}
 
-	/*public Collection<Modelo> listar() {
+	public Collection<Modelo> listar() {
 		// TODO Auto-generated method stub
 		Query q = manager.createQuery("SELECT p FROM Modelo p");
 		return (Collection<Modelo>) q.getResultList();
-	}*/
+	}
 }

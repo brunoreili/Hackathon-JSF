@@ -14,10 +14,12 @@
         <p:panel header="Categoria" id="panel">	
         	<p:messages id="msgCategoria" />
 	        	<h:panelGrid columns="3" cellpadding="5">
-	            	<p:outputLabel for="descricaoCategoria" value="Descrição da Categoria:" />
-	            	<p:inputTextarea rows="6" cols="33" id="descricaoCategoria" value="#{categoriaMB.categoria.descricaiCategoria}" required="true" label="Descrição"/>
-	            	<p:message for="descricaoCategoria" display="icon" />
-	        		<p:commandButton value="Salvar Categoria" update="panel" actionListener="#{categoriaMB.chamar()}" icon="ui-icon-check" />
+	        	
+	            	<label>Descrição da Categoria: </label>
+	            	<p:inputTextarea rows="6" cols="33" id="descricao" value="#{categoriaMB.categoria.descricaiCategoria}" /><br/>
+	            	
+	        		<p:commandButton value="Cadastrar" actionListener="#{categoriaMB.salvar()}" update="panel"/>
+	        		<p:commandButton value="Voltar" action="#{categoriaMB.voltar()}" />
 	        	</h:panelGrid> 
         </p:panel>
         

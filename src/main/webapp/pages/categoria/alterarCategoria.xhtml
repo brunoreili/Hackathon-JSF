@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+
+		<!-- Inserir dados, pesquisar por matricula para editar -->
+		<p:panel id="panel" header="Categoria">
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+			<h:panelGrid columns="2" cellpadding="5">
+				<label>Identificador: </label>
+				<p:inputText id="idCategoria" value="#{categoriaMB.categoria.idCategoria}" />
+
+				<label>Descrição: </label>
+				<p:inputTextarea rows="6" cols="33" id="descricao" value="#{categoriaMB.categoria.descricaiCategoria}" />
+
+				<p:commandButton value="Alterar" actionListener="#{categoriaMB.alterar()}" update="panel"/>
+				<p:commandButton value="Voltar" action="#{categoriaMB.voltar()}" />
+			</h:panelGrid>
+
+		</p:panel>
+
+	</h:form>
+</h:body>
+</html>

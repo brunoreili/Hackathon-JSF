@@ -25,6 +25,10 @@ public class CategoriaRepository {
 	public Categoria busca(Integer id) {
 		return this.manager.find(Categoria.class, id);
 	}
+	
+	public void remove(Integer id) {
+		this.manager.remove(manager.find(Categoria.class, id));
+	}
 
 	public List<Categoria> lista() {
 		return this.manager.createQuery("select c from categoria c", Categoria.class)
